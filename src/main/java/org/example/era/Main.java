@@ -16,6 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        Controller.stage = primaryStage;
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"))));
         primaryStage.setTitle("The New Era");
         primaryStage.setOnCloseRequest(e -> {

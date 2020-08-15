@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox alignment="CENTER" prefWidth="512.0" spacing="16.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.era.Controller">
+<VBox alignment="TOP_CENTER" prefWidth="512.0" spacing="16.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.era.Controller">
    <children>
       <HBox alignment="CENTER_LEFT" spacing="16.0">
          <children>
-            <Button mnemonicParsing="false" text="Download" />
-            <CheckBox mnemonicParsing="false" text="Do you want to choose a path?" />
+            <Button mnemonicParsing="false" onAction="#onDownload" text="Download" />
+            <CheckBox mnemonicParsing="false" onAction="#onEnable" text="I want to chage file's settings" />
          </children>
          <VBox.margin>
             <Insets />
@@ -23,7 +23,7 @@
       <VBox alignment="CENTER_LEFT" spacing="4.0">
          <children>
             <Label text="You need to enter a valid URL to download its contents:" />
-            <TextField promptText="URL Address" />
+            <TextField fx:id="urlTextField" promptText="URL Address" />
          </children>
          <VBox.margin>
             <Insets />
@@ -32,10 +32,11 @@
       <VBox alignment="CENTER_LEFT" disable="true" layoutX="10.0" layoutY="54.0" spacing="4.0">
          <children>
             <Label text="If you would like, you can choose a path to save your file:" />
+            <TextField fx:id="nameTextField" promptText="File Name" />
             <HBox>
                <children>
-                  <TextField promptText="Path To Save File" HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" text="Choose..." />
+                  <TextField fx:id="pathTextField" editable="false" promptText="Path To Save File" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#onChoose" text="Choose..." />
                </children>
             </HBox>
          </children>

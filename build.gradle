@@ -28,4 +28,7 @@ jlink {
     launcher {
         name = 'era'
     }
+    jpackage {
+        installerType = 'deb'
+    }
 }
